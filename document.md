@@ -29,7 +29,9 @@
 
 **Landing page:** no ar. Arquivo único `index.html`, projeto Vercel **`english-for-success-2`** (separado do app). É a referência visual do app.
 
-**Status atual:** Planejamento concluído. **Próximo: Fase 0.**
+**App:** no ar. Arquivo único `app/index.html`, projeto Vercel **`english-for-success-3`** (separado da landing). Backend de login/dados: **Supabase** (projeto ref `mplmqnmxduuocaxmslgr`, região São Paulo). A chave `anon` (pública) e a URL já estão no `app/index.html`.
+
+**Status atual:** Fases 0 e 1 **concluídas e no ar e testadas**. **Próximo: Fase 2 (Delagassa Mentor — o chat de IA).**
 
 ---
 
@@ -129,9 +131,10 @@ Princípio: **simples de editar pelo iPhone, segura e profissional.**
 ---
 
 ## 8. Progresso
-- [ ] **Fase 0** — Fundação
-- [ ] **Fase 1** — Cadastro e Login
-- [ ] **Fase 2** — Delagassa Mentor
+- [x] **Fase 0** — Fundação ✅ — casca do app no ar com a identidade da landing. Projeto Vercel `english-for-success-3` (`english-for-success-3.vercel.app`), repo separado da landing.
+- [x] **Fase 1** — Cadastro e Login ✅ — cadastro, login, onboarding (objetivo + nível) e home personalizada funcionando ao vivo. Supabase ligado (auth via `@supabase/supabase-js` CDN). Onboarding salva `objective` + `level` + `full_name` no **user_metadata** (sem tabela própria ainda — decisão deliberada pra simplicidade). Botão mostrar/ocultar senha. Sessão persistente (continua logado ao reabrir). Testado: conta criada (IELTS + Intermediário) → home "E aí, Jean!".
+  - *Pendência p/ Fase 6:* definir comportamento do "Confirm email" no Supabase + Site URL/redirect pra confirmação funcionar pra usuários reais. O app já trata os dois casos (com/sem confirmação).
+- [ ] **Fase 2** — Delagassa Mentor *(próxima)*
 - [ ] **Fase 3** — Trilhas e Aulas
 - [ ] **Fase 4** — Monetização
 - [ ] **Fase 5** — Diferenciais
