@@ -29,9 +29,9 @@
 
 **Landing page:** no ar. Arquivo único `index.html`, projeto Vercel **`english-for-success-2`** (separado do app). É a referência visual do app.
 
-**App:** no ar. Arquivo único `app/index.html`, projeto Vercel **`english-for-success-3`** (separado da landing). Backend de login/dados: **Supabase** (projeto ref `mplmqnmxduuocaxmslgr`, região São Paulo). A chave `anon` (pública) e a URL já estão no `app/index.html`.
+**App:** no ar. Frontend `app/index.html` (arquivo único) + função serverless `app/api/chat.js`, projeto Vercel **`english-for-success-3`** (separado da landing). Backend de login/dados: **Supabase** (projeto ref `mplmqnmxduuocaxmslgr`, região São Paulo); chave `anon` + URL no `index.html`. IA do chat: **OpenAI `gpt-4o-mini`** via a função, com a chave em `OPENAI_API_KEY` (variável de ambiente no Vercel — NUNCA no código).
 
-**Status atual:** Fases 0 e 1 **concluídas e no ar e testadas**. **Próximo: Fase 2 (Delagassa Mentor — o chat de IA).**
+**Status atual:** Fases 0, 1 e 2 **concluídas, no ar e testadas**. **Próximo: Fase 3 (Trilhas e Aulas).**
 
 ---
 
@@ -134,8 +134,9 @@ Princípio: **simples de editar pelo iPhone, segura e profissional.**
 - [x] **Fase 0** — Fundação ✅ — casca do app no ar com a identidade da landing. Projeto Vercel `english-for-success-3` (`english-for-success-3.vercel.app`), repo separado da landing.
 - [x] **Fase 1** — Cadastro e Login ✅ — cadastro, login, onboarding (objetivo + nível) e home personalizada funcionando ao vivo. Supabase ligado (auth via `@supabase/supabase-js` CDN). Onboarding salva `objective` + `level` + `full_name` no **user_metadata** (sem tabela própria ainda — decisão deliberada pra simplicidade). Botão mostrar/ocultar senha. Sessão persistente (continua logado ao reabrir). Testado: conta criada (IELTS + Intermediário) → home "E aí, Jean!".
   - *Pendência p/ Fase 6:* definir comportamento do "Confirm email" no Supabase + Site URL/redirect pra confirmação funcionar pra usuários reais. O app já trata os dois casos (com/sem confirmação).
-- [ ] **Fase 2** — Delagassa Mentor *(próxima)*
-- [ ] **Fase 3** — Trilhas e Aulas
+- [x] **Fase 2** — Delagassa Mentor ✅ — chat de IA funcionando ao vivo. Frontend: tela de chat no `index.html` (abre pelo card da home), com balões, indicador "digitando", textarea que cresce, e ajuste de altura pro teclado do iPhone (visualViewport). Backend: função serverless `api/chat.js` no Vercel, **OpenAI `gpt-4o-mini`** (temp 0.75, máx 600 tokens, últimas 20 msgs), chave em `OPENAI_API_KEY` (env var). Memória da conversa é por sessão (em memória; persistência entre sessões fica p/ quando houver tabelas no banco). Persona afinada com o Jean: **mentor executivo** — caloroso mas com autoridade, didático (nomeia a regra, mostra o padrão, ensina collocations naturais com "🗣️ Mais natural:"), enxuto (máx 2 erros por vez), motiva pela confiança (sem gíria/euforia). Testado ao vivo no domínio limpo.
+  - *Aprendizado de deploy (importante p/ próximas fases):* arquivos grandes (com base64) devem ir por **Upload files** no GitHub, não colar (a colagem corta). Após o commit, conferir na aba **Deployments** se o deploy foi pra **Production**; se ficar "Staged/Preview", usar **Promote to Production**. Usar sempre a URL limpa `english-for-success-3.vercel.app` (não os links com hash do deploy).
+- [ ] **Fase 3** — Trilhas e Aulas *(próxima)*
 - [ ] **Fase 4** — Monetização
 - [ ] **Fase 5** — Diferenciais
 - [ ] **Fase 6** — Polimento e Lançamento
